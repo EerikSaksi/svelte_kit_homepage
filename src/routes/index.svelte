@@ -20,7 +20,7 @@
       CarouselWithTechnologies = module.default;
     });
   }
-  let arrowVisible = true;
+  let arrowVisible = false;
   onMount(() => {
     const interval = setInterval(() => {
       arrowVisible = true;
