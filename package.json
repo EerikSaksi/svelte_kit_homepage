@@ -16,8 +16,10 @@
 		"svelte": "^3.34.0",
 		"svelte-intersection-observer": "^0.7.0",
 		"svelte-preprocess": "^4.7.3",
-		"svelte-scrollto": "^0.2.0",
 		"tailwindcss": "^2.2.4"
 	},
+    "dependencies":{
+		"svelte-scrollto": "^0.2.0"
+    },
 	"type": "module"
 }

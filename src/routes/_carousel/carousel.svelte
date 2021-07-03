@@ -57,10 +57,6 @@
       width: 100%;
     }
   }
-  .bar {
-    animation-delay: 1s;
-    animation: slideInFromLeft 1s forwards;
-  }
 </style>
 
 
