@@ -4,7 +4,18 @@ const config = {
 		"./src/**/*.{html,js,svelte,ts}",
 	],
 	theme: {
-		extend: {},
+		extend: {
+          keyframes: {
+             'ring-pulse': {
+               '0%, 100%': { '--tw-ring-opacity': 1 },
+               '50%': { '--tw-ring-opacity': 0.7 },
+             }
+          },
+          animate: {
+             'animate-ring-pulse': 'ring-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+          }
+        },
+
 	},
 	plugins: [],
 };

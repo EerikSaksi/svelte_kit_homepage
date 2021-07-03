@@ -4,7 +4,6 @@
 
 <script>
   import Timeline from "./timeline.svelte";
-  export let visible;
 </script>
 
 <Timeline
@@ -15,5 +14,4 @@
   explanationOnTop={false}
   src="uros.webp"
   colors={["from-red-200", "via-red-500", "to-red-200", "from-red-500", "to-red-500", "ring-red-500", "text-red-500"]}
-  {visible}
 />

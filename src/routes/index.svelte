@@ -10,8 +10,6 @@
   import UrosTimeline from "./_timeline/uros_timeline.svelte";
   import * as animateScroll from "svelte-scrollto";
   let CarouselWithTechnologies;
-  let uniTimelineVisible = false;
-  let urosTimeLineVisible = false;
   let intersecting;
   let element;
   $: if (intersecting) {
@@ -21,25 +19,11 @@
     });
   }
 
-  let arrowVisible = false;
-
-  let timer = 0;
+  let arrowVisible = -1;
   onMount(() => {
     const interval = setInterval(() => {
-      timer += 1;
-      switch (timer) {
-        case 1:
-          uniTimelineVisible = true;
-          console.log(uniTimelineVisible);
-          break;
-        case 3:
-          urosTimeLineVisible = true;
-          break;
-        case 6:
-          arrowVisible = !intersecting;
-          clearInterval(interval);
-      }
-    }, 1000);
+      arrowVisible += 1
+    }, 5000);
     return () => {
       clearInterval(interval);
     };
@@ -55,13 +39,8 @@
       <RightHandIcons />
     </div>
     <div class="flex-1">
-      {#if uniTimelineVisible}
-        <UniTimeline visible={uniTimelineVisible} />
-      {/if}
-
-      {#if urosTimeLineVisible}
-        <UrosTimeline visible={urosTimeLineVisible} />
-      {/if}
+      <UniTimeline />
+      <UrosTimeline />
     </div>
     <button
       class="{arrowVisible
