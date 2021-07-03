@@ -18,11 +18,11 @@
       CarouselWithTechnologies = module.default;
     });
   }
-
-  let arrowVisible = -1;
+  let arrowVisible = false
   onMount(() => {
     const interval = setInterval(() => {
-      arrowVisible += 1
+      console.log({arrowVisible})
+      arrowVisible = true
     }, 5000);
     return () => {
       clearInterval(interval);
@@ -43,9 +43,7 @@
       <UrosTimeline />
     </div>
     <button
-      class="{arrowVisible
-        ? 'opacity-100'
-        : 'opacity-0'} delay-500 transition-opacity absolute w-12 h-12 bottom-4 left-1/2 -translate-x-1/2"
+      class=" {arrowVisible ? 'opacity-100 transition-opacity duration-1000' : 'opacity-0' }  absolute w-12 h-12 bottom-4 left-1/2 -translate-x-1/2"
       on:click={() => animateScroll.scrollToBottom()}
     >
       <svg class="animate-bounce" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
