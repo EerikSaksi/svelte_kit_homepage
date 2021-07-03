@@ -44,17 +44,11 @@
       <UrosTimeline />
     </div>
     <button
-      class=" {arrowVisible ? 'opacity-100 transition-opacity duration-1000' : 'opacity-0'} animate-bounce block m-auto"
+      class=" {arrowVisible ? 'opacity-100 transition-opacity duration-1000' : 'opacity-0'} animate-bounce absolute bottom-10 left-0 w-full text-center"  
       on:click={() => animateScroll.scrollToBottom()}
     >
       Next
-      <svg
-        class="w-10 h-10" 
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
+      <svg class="w-10 h-10 absolute left-1/2 transform -translate-x-1/2"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 17l-4 4m0 0l-4-4m4 4V3" />
       </svg>
     </button>
