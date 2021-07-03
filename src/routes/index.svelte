@@ -1,6 +1,7 @@
 <script context="module">
   export const prerender = true;
 </script>
+
 <script>
   import { onMount } from "svelte";
   import IntersectionObserver from "svelte-intersection-observer";
@@ -14,16 +15,16 @@
   let element;
   $: if (intersecting) {
     arrowVisible = false;
-    console.log("imported")
+    console.log("imported");
     import("./_carousel/carousel_with_technologies.svelte").then((module) => {
       CarouselWithTechnologies = module.default;
     });
   }
-  let arrowVisible = false
+  let arrowVisible = true;
   onMount(() => {
     const interval = setInterval(() => {
-      arrowVisible = true
-      clearInterval(interval)
+      arrowVisible = true;
+      clearInterval(interval);
     }, 5000);
     return () => {
       clearInterval(interval);
@@ -32,11 +33,10 @@
 </script>
 
 <main>
-  <div class="flex flex-col h-screen md:mx-auto md:container">
+  <div class="flex flex-col h-screen md:mx-auto md:container b">
     <div class="flex-1 text-sm grid-flow-col grid grid-rows-2 grid-cols-4 md:grid-cols-3 md:text-3xl place-items-center">
       <LeftHandIcons />
       <img class="h-64 md:h-96 row-span-2 col-span-2 md:col-span-1 " alt="Cartoon Eerik" src="avataaars.svg" />
-
       <RightHandIcons />
     </div>
     <div class="flex-1">
@@ -44,11 +44,17 @@
       <UrosTimeline />
     </div>
     <button
-      class=" {arrowVisible ? 'opacity-100 transition-opacity duration-1000' : 'opacity-0' }  absolute w-12 h-12 bottom-4 left-1/2 -translate-x-1/2 animate-bounce"
+      class=" {arrowVisible ? 'opacity-100 transition-opacity duration-1000' : 'opacity-0'} animate-bounce block m-auto"
       on:click={() => animateScroll.scrollToBottom()}
     >
       Next
-      <svg class="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg
+        class="w-10 h-10" 
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 17l-4 4m0 0l-4-4m4 4V3" />
       </svg>
     </button>
