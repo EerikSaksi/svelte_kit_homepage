@@ -14,6 +14,7 @@
   let element;
   $: if (intersecting) {
     arrowVisible = false;
+    console.log("imported")
     import("./_carousel/carousel_with_technologies.svelte").then((module) => {
       CarouselWithTechnologies = module.default;
     });
@@ -21,8 +22,8 @@
   let arrowVisible = false
   onMount(() => {
     const interval = setInterval(() => {
-      console.log({arrowVisible})
       arrowVisible = true
+      clearInterval(interval)
     }, 5000);
     return () => {
       clearInterval(interval);
@@ -43,17 +44,18 @@
       <UrosTimeline />
     </div>
     <button
-      class=" {arrowVisible ? 'opacity-100 transition-opacity duration-1000' : 'opacity-0' }  absolute w-12 h-12 bottom-4 left-1/2 -translate-x-1/2"
+      class=" {arrowVisible ? 'opacity-100 transition-opacity duration-1000' : 'opacity-0' }  absolute w-12 h-12 bottom-4 left-1/2 -translate-x-1/2 animate-bounce"
       on:click={() => animateScroll.scrollToBottom()}
     >
-      <svg class="animate-bounce" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      Next
+      <svg class="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 17l-4 4m0 0l-4-4m4 4V3" />
       </svg>
     </button>
   </div>
 </main>
 
-<IntersectionObserver {element} threshold={0.05} bind:intersecting once={true}>
+<IntersectionObserver {element} threshold={0.3} bind:intersecting once={true}>
   <div bind:this={element} class="flex items-center justify-center h-screen">
     <svelte:component this={CarouselWithTechnologies} />
   </div>
