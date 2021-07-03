@@ -1,6 +1,7 @@
 <script context="module">
   export const prerender = true;
 </script>
+
 <script>
   import Ball from "./ball.svelte";
   import Explanation from "./explanation.svelte";
@@ -21,39 +22,33 @@
   export let leftShift;
 </script>
 
-<style>
-  @keyframes slideInFromLeft {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 100%;
-    }
-  }
-  .bar {
-    animation-delay: 1s;
-    animation: slideInFromLeft 1s forwards;
-  }
-</style>
-
-<div class="flex flex-col fade-in ">
+<div class="flex flex-col ">
   {#if explanationOnTop}
     <Explanation {src} {colors} {explanationText} {leftShift} />
   {/if}
-  <div class="relative flex justify-center m-3">
-    <div
-      class="flex flex-row {widths} absolute {leftShift ? leftShift + ' transform -translate-x-1/2 ' : ''}">
+  <div class="relative flex justify-center m-3 animate-pulsing">
+    <div class="flex flex-row {widths} absolute {leftShift ? leftShift + ' transform -translate-x-1/2 ' : ''}">
       <Ball {colors} date={dates[0]} />
-      <div
-        class="h-3  rounded bar ease-in-out transition-all bg-gradient-to-r {colors[0]} {colors[1]} {colors[2]}" />
+      <div class="h-3 w-full  rounded bar ease-in-out transition-all bg-gradient-to-r {colors[0]} {colors[1]} {colors[2]}" />
       <Ball isRight={true} {colors} date={dates[1]} />
     </div>
   </div>
   {#if !explanationOnTop}
-    <Explanation
-      {src}
-      {colors}
-      {explanationText}
-      {leftShift} />
+    <Explanation {src} {colors} {explanationText} {leftShift} />
   {/if}
 </div>
+
+<style>
+  .animate-pulsing {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1
+    }
+    50% {
+      opacity: 0.7
+    }
+  }
+</style>
