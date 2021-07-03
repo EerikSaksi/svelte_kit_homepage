@@ -5,10 +5,10 @@
   export let extraClasses = "grid-rows-1 grid-cols-2";
   export let images = [
     {
-      src: "static/reactnative.webp",
+      src: "reactnative.webp",
     },
     {
-      src: "static/expo.webp",
+      src: "expo.webp",
     },
   ];
 </script>

@@ -8,28 +8,28 @@
       extraClasses: "grid-cols-2 grid-rows-2",
       images: [
         {
-          src: "static/react.webp",
+          src: "react.webp",
         },
         {
-          src: "static/svelte.webp",
+          src: "svelte.webp",
         },
         {
-          src: "static/django.webp",
+          src: "django.webp",
         },
         {
-          src: "static/jquery.webp",
+          src: "jquery.webp",
         },
       ],
     },
     {
       extraClasses: "grid-cols-2 grid-rows-2",
       images: [
-        { src: "static/materialui.webp" },
+        { src: "materialui.webp" },
         {
-          src: "static/bootstrap.webp",
+          src: "bootstrap.webp",
         },
         {
-          src: "static/tailwind.webp",
+          src: "tailwind.webp",
           extraClasses: "col-span-full",
         },
       ],
@@ -38,10 +38,10 @@
       extraClasses: "grid-rows-1 grid-cols-2",
       images: [
         {
-          src: "static/reactnative.webp",
+          src: "reactnative.webp",
         },
         {
-          src: "static/expo.webp",
+          src: "expo.webp",
         },
       ],
     },
@@ -49,15 +49,15 @@
       extraClasses: "grid-rows-2 grid-cols-2",
       images: [
         {
-          src: "static/apollo.webp",
+          src: "apollo.webp",
         },
 
         {
-          src: "static/typegraphql.webp",
+          src: "typegraphql.webp",
         },
 
         {
-          src: "static/postgraphile.webp",
+          src: "postgraphile.webp",
           extraClasses: "col-span-full",
         },
       ],
@@ -66,16 +66,16 @@
       extraClasses: "grid-cols-2 grid-rows-2",
       images: [
         {
-          src: "static/postgres.webp",
+          src: "postgres.webp",
         },
         {
-          src: "static/sequelize.webp",
+          src: "sequelize.webp",
         },
         {
-          src: "static/typeorm.webp",
+          src: "typeorm.webp",
         },
         {
-          src: "static/sqlalchemy.webp",
+          src: "sqlalchemy.webp",
         },
       ],
     },
@@ -84,16 +84,16 @@
       extraClasses: "grid-cols-2 grid-rows-2",
       images: [
         {
-          src: "static/pandas.webp",
+          src: "pandas.webp",
         },
         {
-          src: "static/scikit.webp",
+          src: "scikit.webp",
         },
         {
-          src: "static/spotlight.webp",
+          src: "spotlight.webp",
         },
         {
-          src: "static/networkx.webp",
+          src: "networkx.webp",
         },
       ],
     },

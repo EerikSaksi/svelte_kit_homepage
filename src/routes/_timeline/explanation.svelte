@@ -2,7 +2,7 @@
   export const prerender = true;
 </script>
 <script>
-  export let src = "static/uni.webp";
+  export let src = "uni.webp";
   export let colors;
   export let explanationText;
   export let leftShift;

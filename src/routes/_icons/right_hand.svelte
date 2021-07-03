@@ -3,7 +3,7 @@
 </script>
 <div class="justify-self-start">
   <a class="inline-flex items-center " href="https://github.com/EerikSaksi">
-    <img alt="Github" class="w-6 mr-2 md:w-12" src="static/git.webp" />
+    <img alt="Github" class="w-6 mr-2 md:w-12" src="git.webp" />
     Github
   </a>
 </div>

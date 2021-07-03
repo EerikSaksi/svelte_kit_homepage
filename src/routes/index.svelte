@@ -1,23 +1,6 @@
 <script context="module">
   export const prerender = true;
 </script>
-
-<style>
-  @keyframes slideInFromLeft {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 100%;
-    }
-  }
-  .bar {
-    animation-delay: 1s;
-    animation: slideInFromLeft 1s forwards;
-  }
-</style>
-
-
 <script>
   import { onMount } from "svelte";
   import IntersectionObserver from "svelte-intersection-observer";
@@ -26,14 +9,14 @@
   import UniTimeline from "./_timeline/timeline.svelte";
   import UrosTimeline from "./_timeline/uros_timeline.svelte";
   import * as animateScroll from "svelte-scrollto";
-  let CarouselWithTechnologies; 
+  let CarouselWithTechnologies;
   let uniTimelineVisible = false;
   let urosTimeLineVisible = false;
   let intersecting;
   let element;
   $: if (intersecting) {
     arrowVisible = false;
-    import('./_carousel/carousel_with_technologies.svelte').then((module) => {
+    import("./_carousel/carousel_with_technologies.svelte").then((module) => {
       CarouselWithTechnologies = module.default;
     });
   }
@@ -67,7 +50,7 @@
   <div class="flex flex-col h-screen md:mx-auto md:container">
     <div class="flex-1 text-sm grid-flow-col grid grid-rows-2 grid-cols-4 md:grid-cols-3 md:text-3xl place-items-center">
       <LeftHandIcons />
-      <img class="h-64 md:h-96 row-span-2 col-span-2 md:col-span-1 " alt="Cartoon Eerik" src="static/avataaars.svg" />
+      <img class="h-64 md:h-96 row-span-2 col-span-2 md:col-span-1 " alt="Cartoon Eerik" src="avataaars.svg" />
 
       <RightHandIcons />
     </div>
