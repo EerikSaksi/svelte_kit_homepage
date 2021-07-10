@@ -1,3 +1,6 @@
+<script context="module">
+  export const prerender = true;
+</script>
 <script>
   import { onMount } from "svelte";
   import Slide from "./slide.svelte";
